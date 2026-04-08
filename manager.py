@@ -1,6 +1,8 @@
 from task import task
 from IO_helper import IO_helper
 FILE_PATH = "tasks.json"
+
+
 class manager:
     def add_task(self, job):
         tasks = list(IO_helper.load(FILE_PATH))

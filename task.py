@@ -4,5 +4,3 @@ class task:
         self.description = description
         self.time = time
         self.priority = priority
-
-    

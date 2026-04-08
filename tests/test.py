@@ -4,6 +4,7 @@ from task import task
 from manager import manager
 from IO_helper import IO_helper
 
+
 class TestTaskManager:
     @pytest.fixture
     def manager_instance(self):
@@ -17,7 +18,7 @@ class TestTaskManager:
     def test_add_task(self, manager_instance, task_data):
         task_instance = task(*task_data)
         with patch("manager.IO_helper.load", return_value=[]), \
-            patch("manager.IO_helper.save") as mock_save:
+        patch("manager.IO_helper.save") as mock_save:
             manager_instance.add_task(task_instance)
             mock_save.assert_called_once()
 
