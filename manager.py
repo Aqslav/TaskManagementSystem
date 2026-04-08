@@ -1,3 +1,4 @@
+from task import task
 class manager:
     def __init__(self):
         self.tasks = []
@@ -15,6 +16,7 @@ class manager:
             print(f"   Time: {self.tasks[i].time}")
             print(f"   Priority: {self.tasks[i].priority}")
 
+
 if __name__ == "__main__":
     manager = manager()
     while True:
@@ -31,21 +33,21 @@ if __name__ == "__main__":
             description = input("Enter task description: ")
             time = input("Enter task time: ")
             priority = input("Enter task priority: ")
-            task = task(name, description, time, priority)
-            manager.add_task(task)
+            job = task(name, description, time, priority)
+            manager.add_task(job)
         elif choice == "2":
             manager.print_tasks()
             name = input("Enter task name to remove: ")
-            for task in manager.tasks:
-                if task.name == name:
-                    manager.remove_task(task)
+            for job in manager.tasks:
+                if job.name == name:
+                    manager.remove_task(job)
                     break
         elif choice == "3":
             manager.print_tasks()
             name = input("Enter task name to mark as completed: ")
-            for task in manager.tasks:
-                if task.name == name:
-                    manager.remove_task(task)
+            for job in manager.tasks:
+                if job.name == name:
+                    manager.remove_task(job)
                     break
         elif choice == "4":
             manager.print_tasks()
