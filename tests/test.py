@@ -18,8 +18,8 @@ class TestTaskManager:
         task_instance = task(*task_data)
         with patch("manager.IO_helper.load", return_value=[]), \
             patch("manager.IO_helper.save") as mock_save:
-            manager_instance.add_task(task_instance)
-            mock_save.assert_called_once()
+                manager_instance.add_task(task_instance)
+                mock_save.assert_called_once()
 
     @pytest.mark.parametrize("task_data", [
         ("Test Task 1", "This is the first test task", "2024-06-01", 3),
