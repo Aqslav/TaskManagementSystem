@@ -32,4 +32,3 @@ class TestTaskManager:
             task_instance = task(*task_data)
             manager_instance.remove_task(task_instance.__dict__)
         assert IO_helper.load("tasks.json") == []
-
